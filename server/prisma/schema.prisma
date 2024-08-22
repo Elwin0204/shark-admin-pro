@@ -26,4 +26,62 @@ model User {
   update_time DateTime?
   is_deleted Int? @db.TinyInt @default(0)
   status Int? @db.TinyInt @default(1)
+  roles UsersOnRoles[]
+}
+
+model Role {
+  id Int @id @default(autoincrement())
+  code String @db.VarChar(32)
+  name String? @db.VarChar(64)
+  sort Int? @db.TinyInt()
+  status Int @db.TinyInt() @default(1)
+  is_deleted Int @db.TinyInt() @default(0)
+  create_by String? @db.VarChar(64)
+  update_by String? @db.VarChar(64)
+  create_time DateTime?
+  update_time DateTime?
+  users UsersOnRoles[]
+  menus RolesOnMenus[]
+}
+
+model Menu {
+  id Int @id @default(autoincrement())
+  parent_id Int?
+  name String @db.VarChar(64)
+  type String @db.VarChar(32)
+  route_name String? @db.VarChar(255)
+  route_path String? @db.VarChar(255)
+  component String? @db.VarChar(255)
+  btn_code String? @db.VarChar(128)
+  always_show Int? @db.TinyInt()
+  keep_alive Int? @db.TinyInt() @default(1)
+  hidden Int? @db.TinyInt() @default(0)
+  sort Int? @default(0)
+  icon String @db.VarChar(64)
+  redirect String @db.VarChar(255)
+  create_by String? @db.VarChar(64)
+  update_by String? @db.VarChar(64)
+  create_time DateTime?
+  update_time DateTime?
+  roles RolesOnMenus[]
+}
+
+model UsersOnRoles {
+  user_id Int
+  role_id Int
+  user User @relation(fields: [user_id], references: [id])
+  role Role @relation(fields: [role_id], references: [id])
+
+  @@id([user_id, role_id])
+  @@map("user_role")
+}
+
+model RolesOnMenus {
+  role_id Int
+  menu_id Int
+  role Role @relation(fields: [role_id], references: [id])
+  menu Menu @relation(fields: [menu_id], references: [id])
+
+  @@id([role_id, menu_id])
+  @@map("role_menu")
 }
