@@ -1,26 +1,50 @@
+import { LoginDto } from './dto/login.dto';
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+// import { UpdateUserDto } from './dto/update-user.dto';
+import { PrismaClient } from '@prisma/client';
+import { ApiException } from 'src/common/filter/http-exception/api.exception';
+import { ApiErrorCode } from 'src/common/enums/api-error-code.enum';
+import { AuthService } from 'src/auth/auth.service';
 
 @Injectable()
 export class UserService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
-  }
+  constructor(
+    private prisma: PrismaClient,
+    private authService: AuthService,
+  ) {}
+  async login(loginDto: LoginDto) {
+    const user = await this.prisma.user.findUnique({
+      where: { username: loginDto.username },
+    });
 
-  findAll() {
-    return `This action returns all user`;
-  }
+    if (!user) {
+      return new ApiException('用户不存在', ApiErrorCode.ERR_USER_NOTEXIST);
+    } else if (user.password !== loginDto.password) {
+      return new ApiException('密码错误', ApiErrorCode.ERR_PASSWORD);
+    } else {
+      const { access_token } = await this.authService.createToken({
+        id: user.id,
+        username: user.username,
+      });
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+      return {
+        token: access_token,
+      };
+    }
   }
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async create(createUserDto: CreateUserDto) {
+    const user = await this.prisma.user.findUnique({
+      where: { username: createUserDto.username },
+    });
+    console.log('crete', user);
+    if (user) {
+      throw new ApiException('用户已存在', ApiErrorCode.ERR_USER_EXIST);
+    } else {
+      const data = {
+        ...createUserDto,
+      };
+      return this.prisma.user.create({ data: data });
+    }
   }
 }
