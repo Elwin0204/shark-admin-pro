@@ -1,0 +1,27 @@
+# 正式环境配置
+app:
+  prefix: '/api'
+  port: 8080
+
+# 数据库配置
+db:
+  mysql:
+    host: 'localhost'
+    username: 'root'
+    password: 'Elwin0204'
+    database: 'shark'
+    port: 3306
+    charset: 'utf8mb4'
+    logger: 'advanced-console'
+    logging: true
+    multipleStatements: true
+    dropSchema: false
+    synchronize: true
+    supportBigNumbers: true
+    bigNumberStrings: true
+
+# jwt 配置
+jwt:
+  secretkey: 'SHARK_SECRET'
+  expiresin: '2h'
+  refreshExpiresIn: '2h'

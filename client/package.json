@@ -50,5 +50,27 @@
     "vite-plugin-node-polyfills": "^0.22.0",
     "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^2.0.29"
+  },
+  "description": "A mid to backend template based on Vue3, Vite5, TypeScript, Antd vue, and UnoCSS technology stacks.",
+  "keywords": [
+    "Vue3 admin ",
+    "vue-admin-template",
+    "Vite5",
+    "TypeScript",
+    "ant-design-vue v4",
+    "UnoCSS"
+  ],
+  "author": {
+    "name": "Elwin",
+    "email": "elwin0204@gmail.com",
+    "url": "https://github.com/elwin0204"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/elwin0204/shark-admin-pro",
+  "repository": {
+    "url": "https://github.com/elwin0204/shark-admin-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elwin0204/shark-admin-pro/issues"
   }
 }
