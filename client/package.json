@@ -1,20 +1,47 @@
 {
-  "name": "client",
+  "name": "shark-admin-pro",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vite serve --mode development",
+    "build:prod": "vite build --mode production && vue-tsc --noEmit",
+    "lint:eslint": "eslint  --fix --ext .ts,.js,.vue ./src ",
+    "lint:prettier": "prettier --write \"**/*.{js,cjs,ts,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint  \"**/*.{css,scss,vue}\" --fix",
+    "lint:lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{cjs,json}": [
+      "prettier --write"
+    ],
+    "*.{vue,html}": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@vueuse/core": "^11.0.1",
     "ant-design-vue": "4.x",
     "axios": "^1.7.4",
+    "axios-retry": "^4.5.0",
     "clipboard": "^2.0.11",
-    "i": "^0.3.7",
+    "localforage": "^1.10.0",
     "lodash-es": "^4.17.21",
+    "nanoid": "^5.0.7",
     "nprogress": "^0.2.0",
     "pinia": "^2.2.2",
     "vue": "^3.4.37",
@@ -23,11 +50,18 @@
     "xlsx-js-style": "^1.2.0"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.242",
     "@types/node": "^22.4.1",
     "@types/nprogress": "^0.2.3",
     "@types/qs": "^6.9.15",
     "@typescript-eslint/eslint-plugin": "^8.1.0",
     "@typescript-eslint/parser": "^8.1.0",
+    "@unocss/eslint-config": "^0.62.3",
+    "@unocss/preset-icons": "^0.62.3",
+    "@unocss/preset-uno": "^0.62.3",
+    "@unocss/transformer-directives": "^0.62.3",
+    "@unocss/transformer-variant-group": "^0.62.3",
+    "@unocss/vite": "^0.62.3",
     "@vitejs/plugin-legacy": "^5.4.2",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
@@ -42,6 +76,13 @@
     "postcss-html": "^1.7.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "stylelint": "^16.9.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^5.1.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.1",
     "terser": "^5.31.6",
     "typescript": "^5.5.3",
     "unplugin-icons": "^0.19.2",
@@ -72,5 +113,8 @@
   },
   "bugs": {
     "url": "https://github.com/elwin0204/shark-admin-pro/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
