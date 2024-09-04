@@ -4,177 +4,196 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@vueuse/core':
-    specifier: ^11.0.1
-    version: 11.0.1(vue@3.4.38)
-  ant-design-vue:
-    specifier: 4.x
-    version: 4.2.3(vue@3.4.38)
-  axios:
-    specifier: ^1.7.4
-    version: 1.7.4
-  axios-retry:
-    specifier: ^4.5.0
-    version: 4.5.0(axios@1.7.4)
-  clipboard:
-    specifier: ^2.0.11
-    version: 2.0.11
-  localforage:
-    specifier: ^1.10.0
-    version: 1.10.0
-  lodash-es:
-    specifier: ^4.17.21
-    version: 4.17.21
-  nanoid:
-    specifier: ^5.0.7
-    version: 5.0.7
-  nprogress:
-    specifier: ^0.2.0
-    version: 0.2.0
-  pinia:
-    specifier: ^2.2.2
-    version: 2.2.2(typescript@5.5.4)(vue@3.4.38)
-  vue:
-    specifier: ^3.4.37
-    version: 3.4.38(typescript@5.5.4)
-  vue-i18n:
-    specifier: ^9.14.0
-    version: 9.14.0(vue@3.4.38)
-  vue-router:
-    specifier: ^4.4.3
-    version: 4.4.3(vue@3.4.38)
-  xlsx-js-style:
-    specifier: ^1.2.0
-    version: 1.2.0
+importers:
 
-devDependencies:
-  '@iconify/json':
-    specifier: ^2.2.242
-    version: 2.2.242
-  '@types/node':
-    specifier: ^22.4.1
-    version: 22.4.1
-  '@types/nprogress':
-    specifier: ^0.2.3
-    version: 0.2.3
-  '@types/qs':
-    specifier: ^6.9.15
-    version: 6.9.15
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^8.1.0
-    version: 8.1.0(@typescript-eslint/parser@8.1.0)(eslint@8.57.0)(typescript@5.5.4)
-  '@typescript-eslint/parser':
-    specifier: ^8.1.0
-    version: 8.1.0(eslint@8.57.0)(typescript@5.5.4)
-  '@unocss/eslint-config':
-    specifier: ^0.62.3
-    version: 0.62.3(eslint@8.57.0)(typescript@5.5.4)
-  '@unocss/preset-icons':
-    specifier: ^0.62.3
-    version: 0.62.3
-  '@unocss/preset-uno':
-    specifier: ^0.62.3
-    version: 0.62.3
-  '@unocss/transformer-directives':
-    specifier: ^0.62.3
-    version: 0.62.3
-  '@unocss/transformer-variant-group':
-    specifier: ^0.62.3
-    version: 0.62.3
-  '@unocss/vite':
-    specifier: ^0.62.3
-    version: 0.62.3(vite@5.4.1)
-  '@vitejs/plugin-legacy':
-    specifier: ^5.4.2
-    version: 5.4.2(terser@5.31.6)(vite@5.4.1)
-  '@vitejs/plugin-vue':
-    specifier: ^5.1.2
-    version: 5.1.2(vite@5.4.1)(vue@3.4.38)
-  '@vitejs/plugin-vue-jsx':
-    specifier: ^4.0.1
-    version: 4.0.1(vite@5.4.1)(vue@3.4.38)
-  autoprefixer:
-    specifier: ^10.4.20
-    version: 10.4.20(postcss@8.4.41)
-  eslint:
-    specifier: ^8.57.0
-    version: 8.57.0
-  eslint-config-prettier:
-    specifier: ^9.1.0
-    version: 9.1.0(eslint@8.57.0)
-  eslint-plugin-import:
-    specifier: ^2.29.1
-    version: 2.29.1(@typescript-eslint/parser@8.1.0)(eslint@8.57.0)
-  eslint-plugin-prettier:
-    specifier: ^5.2.1
-    version: 5.2.1(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.3.3)
-  eslint-plugin-vue:
-    specifier: ^9.27.0
-    version: 9.27.0(eslint@8.57.0)
-  lint-staged:
-    specifier: ^15.2.9
-    version: 15.2.9
-  postcss:
-    specifier: ^8.4.41
-    version: 8.4.41
-  postcss-html:
-    specifier: ^1.7.0
-    version: 1.7.0
-  postcss-scss:
-    specifier: ^4.0.9
-    version: 4.0.9(postcss@8.4.41)
-  prettier:
-    specifier: ^3.3.3
-    version: 3.3.3
-  sass:
-    specifier: ^1.77.8
-    version: 1.77.8
-  stylelint:
-    specifier: ^16.9.0
-    version: 16.9.0(typescript@5.5.4)
-  stylelint-config-html:
-    specifier: ^1.1.0
-    version: 1.1.0(postcss-html@1.7.0)(stylelint@16.9.0)
-  stylelint-config-recess-order:
-    specifier: ^5.1.0
-    version: 5.1.0(stylelint@16.9.0)
-  stylelint-config-recommended-scss:
-    specifier: ^14.1.0
-    version: 14.1.0(postcss@8.4.41)(stylelint@16.9.0)
-  stylelint-config-recommended-vue:
-    specifier: ^1.5.0
-    version: 1.5.0(postcss-html@1.7.0)(stylelint@16.9.0)
-  stylelint-config-standard:
-    specifier: ^36.0.1
-    version: 36.0.1(stylelint@16.9.0)
-  terser:
-    specifier: ^5.31.6
-    version: 5.31.6
-  typescript:
-    specifier: ^5.5.3
-    version: 5.5.4
-  unplugin-auto-import:
-    specifier: ^0.18.2
-    version: 0.18.2(@vueuse/core@11.0.1)
-  unplugin-icons:
-    specifier: ^0.19.2
-    version: 0.19.2
-  unplugin-vue-components:
-    specifier: ^0.27.4
-    version: 0.27.4(vue@3.4.38)
-  vite:
-    specifier: ^5.4.1
-    version: 5.4.1(@types/node@22.4.1)(sass@1.77.8)(terser@5.31.6)
-  vite-plugin-node-polyfills:
-    specifier: ^0.22.0
-    version: 0.22.0(vite@5.4.1)
-  vite-plugin-svg-icons:
-    specifier: ^2.0.1
-    version: 2.0.1(vite@5.4.1)
-  vue-tsc:
-    specifier: ^2.0.29
-    version: 2.0.29(typescript@5.5.4)
+  .:
+    dependencies:
+      '@sk/color-preset':
+        specifier: workspace:^
+        version: link:packages/color-preset
+      '@vueuse/core':
+        specifier: ^11.0.1
+        version: 11.0.1(vue@3.4.38)
+      ant-design-vue:
+        specifier: 4.x
+        version: 4.2.3(vue@3.4.38)
+      axios:
+        specifier: ^1.7.4
+        version: 1.7.4
+      axios-retry:
+        specifier: ^4.5.0
+        version: 4.5.0(axios@1.7.4)
+      clipboard:
+        specifier: ^2.0.11
+        version: 2.0.11
+      localforage:
+        specifier: ^1.10.0
+        version: 1.10.0
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      nanoid:
+        specifier: ^5.0.7
+        version: 5.0.7
+      nprogress:
+        specifier: ^0.2.0
+        version: 0.2.0
+      pinia:
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.5.4)(vue@3.4.38)
+      vue:
+        specifier: ^3.4.37
+        version: 3.4.38(typescript@5.5.4)
+      vue-i18n:
+        specifier: ^9.14.0
+        version: 9.14.0(vue@3.4.38)
+      vue-router:
+        specifier: ^4.4.3
+        version: 4.4.3(vue@3.4.38)
+      xlsx-js-style:
+        specifier: ^1.2.0
+        version: 1.2.0
+    devDependencies:
+      '@iconify/json':
+        specifier: ^2.2.242
+        version: 2.2.242
+      '@sk/uno-preset':
+        specifier: workspace:*
+        version: link:packages/uno-preset
+      '@types/node':
+        specifier: ^22.4.1
+        version: 22.4.1
+      '@types/nprogress':
+        specifier: ^0.2.3
+        version: 0.2.3
+      '@types/qs':
+        specifier: ^6.9.15
+        version: 6.9.15
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.1.0
+        version: 8.1.0(@typescript-eslint/parser@8.1.0)(eslint@8.57.0)(typescript@5.5.4)
+      '@typescript-eslint/parser':
+        specifier: ^8.1.0
+        version: 8.1.0(eslint@8.57.0)(typescript@5.5.4)
+      '@unocss/core':
+        specifier: ^0.62.3
+        version: 0.62.3
+      '@unocss/eslint-config':
+        specifier: ^0.62.3
+        version: 0.62.3(eslint@8.57.0)(typescript@5.5.4)
+      '@unocss/preset-icons':
+        specifier: ^0.62.3
+        version: 0.62.3
+      '@unocss/preset-uno':
+        specifier: ^0.62.3
+        version: 0.62.3
+      '@unocss/transformer-directives':
+        specifier: ^0.62.3
+        version: 0.62.3
+      '@unocss/transformer-variant-group':
+        specifier: ^0.62.3
+        version: 0.62.3
+      '@unocss/vite':
+        specifier: ^0.62.3
+        version: 0.62.3(vite@5.4.1)
+      '@vitejs/plugin-legacy':
+        specifier: ^5.4.2
+        version: 5.4.2(terser@5.31.6)(vite@5.4.1)
+      '@vitejs/plugin-vue':
+        specifier: ^5.1.2
+        version: 5.1.2(vite@5.4.1)(vue@3.4.38)
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^4.0.1
+        version: 4.0.1(vite@5.4.1)(vue@3.4.38)
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.20(postcss@8.4.41)
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.0
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@8.57.0)
+      eslint-plugin-import:
+        specifier: ^2.29.1
+        version: 2.29.1(@typescript-eslint/parser@8.1.0)(eslint@8.57.0)
+      eslint-plugin-prettier:
+        specifier: ^5.2.1
+        version: 5.2.1(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.3.3)
+      eslint-plugin-vue:
+        specifier: ^9.27.0
+        version: 9.27.0(eslint@8.57.0)
+      lint-staged:
+        specifier: ^15.2.9
+        version: 15.2.9
+      postcss:
+        specifier: ^8.4.41
+        version: 8.4.41
+      postcss-html:
+        specifier: ^1.7.0
+        version: 1.7.0
+      postcss-scss:
+        specifier: ^4.0.9
+        version: 4.0.9(postcss@8.4.41)
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
+      sass:
+        specifier: ^1.77.8
+        version: 1.77.8
+      stylelint:
+        specifier: ^16.9.0
+        version: 16.9.0(typescript@5.5.4)
+      stylelint-config-html:
+        specifier: ^1.1.0
+        version: 1.1.0(postcss-html@1.7.0)(stylelint@16.9.0)
+      stylelint-config-recess-order:
+        specifier: ^5.1.0
+        version: 5.1.0(stylelint@16.9.0)
+      stylelint-config-recommended-scss:
+        specifier: ^14.1.0
+        version: 14.1.0(postcss@8.4.41)(stylelint@16.9.0)
+      stylelint-config-recommended-vue:
+        specifier: ^1.5.0
+        version: 1.5.0(postcss-html@1.7.0)(stylelint@16.9.0)
+      stylelint-config-standard:
+        specifier: ^36.0.1
+        version: 36.0.1(stylelint@16.9.0)
+      terser:
+        specifier: ^5.31.6
+        version: 5.31.6
+      typescript:
+        specifier: ^5.5.3
+        version: 5.5.4
+      unplugin-auto-import:
+        specifier: ^0.18.2
+        version: 0.18.2(@vueuse/core@11.0.1)
+      unplugin-icons:
+        specifier: ^0.19.2
+        version: 0.19.2
+      unplugin-vue-components:
+        specifier: ^0.27.4
+        version: 0.27.4(vue@3.4.38)
+      vite:
+        specifier: ^5.4.1
+        version: 5.4.1(@types/node@22.4.1)(sass@1.77.8)(terser@5.31.6)
+      vite-plugin-node-polyfills:
+        specifier: ^0.22.0
+        version: 0.22.0(vite@5.4.1)
+      vite-plugin-svg-icons:
+        specifier: ^2.0.1
+        version: 2.0.1(vite@5.4.1)
+      vue-tsc:
+        specifier: ^2.0.29
+        version: 2.0.29(typescript@5.5.4)
+
+  packages/color-preset:
+    dependencies:
+      colord:
+        specifier: 2.9.3
+        version: 2.9.3
+
+  packages/uno-preset: {}
 
 packages:
 
@@ -3654,7 +3673,6 @@ packages:
 
   /colord@2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
-    dev: true
 
   /colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
