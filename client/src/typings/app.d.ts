@@ -16,7 +16,7 @@ declare namespace App {
     };
 
     interface ThemeSetting {
-      themeScheme: UnionKey.ThemeScheme;
+      themeMode: UnionKey.ThemeScheme;
       recommendColor: boolean;
       themeColor: string;
       grayscale: boolean;
@@ -106,5 +106,19 @@ declare namespace App {
       contentType: string;
       requestIdKey: string;
     }
+  }
+
+  namespace Global {
+    import { _RouteRecordBase } from "vue-router";
+    type RouteRecordConfig = Omit<
+      _RouteRecordBase,
+      "name" | "path" | "children"
+    > & {
+      name: string;
+      path: string;
+      redirect?: string;
+      component?: string;
+      children?: RouteRecordConfig[];
+    };
   }
 }

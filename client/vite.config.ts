@@ -18,16 +18,19 @@ import {
   devDependencies,
 } from "./package.json";
 
+import { createBuildTime } from "./build/timestamp";
+
 /** 平台的名称、版本、运行所需的`node`版本、依赖、构建时间的类型提示 */
 const __APP_INFO__ = {
   pkg: { name, version, engines, dependencies, devDependencies },
-  buildTimestamp: Date.now(),
+  buildTimestamp: createBuildTime(),
 };
 
 const pathSrc = resolve(__dirname, "src");
 //  https://cn.vitejs.dev/config
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
+
   return {
     resolve: {
       alias: {
