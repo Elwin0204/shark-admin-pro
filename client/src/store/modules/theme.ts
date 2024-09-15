@@ -101,6 +101,12 @@ export const useThemeStore = defineStore(StoreId.THEME, () => {
     skLocal.set("themeSettings", themeSettings.value);
   }
 
+  // 重置store
+  function resetStore() {
+    const themeStore = useThemeStore();
+    themeStore.$reset();
+  }
+
   // 页面关闭或者刷新时缓存主题配置
   useEventListener(window, "beforeunload", () => {
     cacheThemeSettings();
@@ -145,5 +151,6 @@ export const useThemeStore = defineStore(StoreId.THEME, () => {
     setThemeMode,
     updateThemeColors,
     setThemeLayout,
+    resetStore,
   };
 });

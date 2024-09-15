@@ -1,4 +1,4 @@
-export const enum StoreId {
+export enum StoreId {
   APP = "store_app",
   THEME = "store_theme",
   SETTING = "store_setting",
